@@ -6,7 +6,7 @@ for (let i = 0; i < 7; ++i) {
     data.push({
         key: i,
         title:"pandas",
-        price: '150',
+        price: '158',
         fileName:"pandas.zip",
         fileSize:"123M",
         date: '2018-01-15 23:12:00',
