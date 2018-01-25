@@ -12,7 +12,7 @@ const IconText = ({ type, text }) => (
     </span>
   );
 
-export default class BTShopListCell extends PureComponent{
+export default class example extends PureComponent{
     constructor(props){
         super(props)
     }

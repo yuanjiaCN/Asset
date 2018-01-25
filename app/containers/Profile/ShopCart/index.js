@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react'
 import BTList from '../../../components/BTList'
 import BTShopListCell from './subviews/BTShopListCell'
+import example from "./subviews/example"
 
 import { Checkbox,Row,Col,Button,Table } from 'antd';
 const CheckboxGroup = Checkbox.Group;
@@ -108,6 +109,7 @@ export default class BTShopCart extends PureComponent{
                     />
                 </div>
                 <div>
+                    <example />
                     <Button type="primary">结算</Button>
                 </div>
             </div>
