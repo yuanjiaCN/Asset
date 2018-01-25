@@ -1,10 +1,9 @@
 import React,{PureComponent} from 'react'
+// import $ from 'jquery'
 import BlockHeader from './BlockView/blockHeader'
 import BlockList from './BlockView/blockList'
 import Map from './BlockView/map'
-// import {BlockHeader,BlockList} from './BlockView'
 import './styles.less'
-// import BlockList from "./BlockView/blockList";
 const list=[
     {
         key:1,
@@ -33,6 +32,9 @@ export default class BTBlockList extends PureComponent{
         this.state={
             list:list
         }
+    }
+    componentDidMount(){
+        // console.log($.window)
     }
     render(){
         return (

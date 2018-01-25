@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import {Provider} from 'react-redux'
 import {hashHistory} from 'react-router'
+// import $ from 'jquery'
 import configureStore from './redux/store/ConfigureStore'
 import 'antd/dist/antd.less';
 import './static/iconfont/iconfont.css'
