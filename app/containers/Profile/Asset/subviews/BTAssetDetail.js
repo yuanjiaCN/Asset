@@ -116,10 +116,13 @@ export default class BTAssetDetail extends PureComponent{
             },
         { title: 'Price', dataIndex: 'price', key: 'price',
                 render: (text, record) => (
-                    <BTEditableCell
-                        value={text}
-                        onChange={()=>this.onCellChange(record.key, 'type')}
-                    />
+                    <div style={{display:"flex",flexDirection:"row"}}>
+                        <img src="http://upload.ouliu.net/i/2018012217455364b5l.png" style={{width:20,height:20,margin:5}} alt=""/>
+                        <BTEditableCell
+                            value={text}
+                            onChange={()=>this.onCellChange(record.key, 'type')}
+                        />
+                          </div>
                 ),
             },
         { title: 'FileName', dataIndex: 'fileName', key: 'fileName' },

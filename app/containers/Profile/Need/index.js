@@ -8,9 +8,8 @@ const TabPane = Tabs.TabPane;
 import BTAssetDetail from './subviews/BTAssetDetail'
 import BTUploadAsset from './subviews/BTUploadAsset'
 import BTHaveBought from "./subviews/BTHaveBought"
-import BTMyAssetSet from "./subviews/BTMyAssetSet"
 
-export default class BTProfileAsset extends PureComponent{
+export default class BTProfileNeed extends PureComponent{
     constructor(props){
         super(props)
     }
@@ -26,13 +25,9 @@ export default class BTProfileAsset extends PureComponent{
                     <TabPane tab="已发布需求" key="2">
                         <BTAssetDetail/>
                     </TabPane>
-                    <TabPane tab="已购买需求" key="3">
-                        <BTHaveBought/>
-                    </TabPane>
-
-                    <TabPane tab="我的需求库" key="4">
-                        <BTMyAssetSet/>
-                    </TabPane>
+                    {/*<TabPane tab="已购买需求" key="3">*/}
+                        {/*<BTHaveBought/>*/}
+                    {/*</TabPane>*/}
                 </Tabs>
             </div>
         )

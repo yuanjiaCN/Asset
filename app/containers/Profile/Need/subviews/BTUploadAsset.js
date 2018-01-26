@@ -1,15 +1,10 @@
 import React,{PureComponent} from 'react'
-import { Radio,Select, Modal ,Table, Badge, Menu, Dropdown, Icon,Upload, message, Button, Tabs, Input, DatePicker,Cascader  } from 'antd';
+import {Radio,Select, Modal ,Table, Badge, Menu, Dropdown, Icon,Upload, message, Button, Tabs, Input, DatePicker,Cascader  } from 'antd';
 // import BTIcon from "app/components/BTIcon"
 import BTIcon from '../../../../components/BTIcon'
 
-const RangePicker = DatePicker.RangePicker;
 const { TextArea } = Input;
 const RadioGroup = Radio.Group;
-
-
-
-
 
 const options = [{
     value: 'Video',
@@ -24,16 +19,6 @@ const options = [{
     }],
 }];
 
-const props = {
-    action: '//jsonplaceholder.typicode.com/posts/',
-    onChange({ file, fileList }) {
-        if (file.status !== 'uploading') {
-            console.log(file, fileList);
-        }
-    },
-
-};
-
 const onChange = (dates, dateStrings)=> {
     console.log('From: ', dates[0], ', to: ', dates[1]);
     console.log('From: ', dateStrings[0], ', to: ', dateStrings[1]);
@@ -44,8 +29,13 @@ for (let i = 10; i < 36; i++) {
     children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 
+
 function handleChange(value) {
     console.log(`selected ${value}`);
+}
+
+function onChangeDate(date, dateString) {
+    console.log(date, dateString);
 }
 
 export default class BTUploadAsset extends PureComponent{
@@ -74,20 +64,25 @@ export default class BTUploadAsset extends PureComponent{
                     <div className="price">
                         <span>Expect Price:</span>
                         <Input/>
+                        <img src="http://upload.ouliu.net/i/2018012217455364b5l.png" style={{width:20,height:20,margin:5}} alt=""/>
                     </div>
-                    <div className="featureTag" >
-                        <span>Feature Tag:</span>
+                    <div className="featureTag">
+                        <span>featureTag:</span>
                         <Select
-                            mode="tags"
-                            style={{ width: '50%'}}
-                            placeholder="Tags Mode"
+                            mode="multiple"
+                            placeholder="Please select"
+                            defaultValue={['a10', 'c12']}
                             onChange={handleChange}
                         >
                             {children}
                         </Select>
                     </div>
+                    <div className="dateSelect">
+                        <span>deadline</span>
+                        <DatePicker onChange={onChangeDate} />
+                    </div>
                     <div className="dataAssetType">
-                        <span>Data Asset Type: </span>
+                        <span>Data Ass Type: </span>
                         <Cascader options={options} onChange={onChange} placeholder="Please select" />
                     </div>
                     {/*<div className="OriginPicture">*/}
@@ -115,19 +110,9 @@ export default class BTUploadAsset extends PureComponent{
                             <TextArea rows={4} />
                         </div>
                     </div>
-                <div className="upLoad">
-                    <Upload {...props}>
-                        <Button>
-                            <Icon type="upload" /> 本地上传
-                        </Button>
-                        <Button>
-                            <Icon type="upload" /> 资源库筛选
-                        </Button>
-                    </Upload>
                     <div className="submit">
                         <Button type="submit">submit</Button>
                     </div>
-                </div>
             </div>
 
         )
