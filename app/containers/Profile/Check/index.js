@@ -2,11 +2,7 @@ import React,{PureComponent} from 'react'
 import { Table, Icon } from 'antd'
 
 const columns = [
-    { title: 'To', dataIndex: '', key: 'y', render: ()=>
-            <div>
-                <a href="#">John</a>
-            </div>
-    },
+    { title: 'To', dataIndex: 'to', key: 'to',},
     { title: 'State', dataIndex: 'state', key:'state' },
     { title: 'price', dataIndex: 'price', key: 'price',render:()=>
             <div>

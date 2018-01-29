@@ -1,7 +1,7 @@
 import React,{PureComponent} from 'react'
 import { Tabs, Input, Ico,Button,Select } from 'antd';
 const TabPane = Tabs.TabPane;
-import './styles.less';
+import "../styles.less"
 
 function callback(key) {
     console.log(key)
@@ -24,84 +24,83 @@ export default class BTAccount extends PureComponent{
 
     render(){
         return(
-            <div className="container">
-                <Tabs defaultActiveKey="1" onChange={callback}>
-                    <TabPane tab="个人资料" key="1">
+                <Tabs defaultActiveKey="1" onChange={callback} className="TabsStyle" >
+                    <TabPane tab="个人资料" key="1" style={{width:"100%"}}>
                         <div className="personalInformation">
-                            <div className="UserName">
+                            <div>
                                 <span>UserName:</span>
-                                <Input style={{width:"80px",height:"20px"}} defaultValue="Jack" />
-                                <Button>modify</Button>
+                                <Input defaultValue="Jack" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="realName">
+                            <div>
                                 <span>realName:</span>
                                 <span>Tom</span>
                             </div>
                             <div className="accountType">
                                 <span>accountType:</span>
-                                    <Select defaultValue="provider" style={{ width:"120px", marginTop:"-30px"}} onChange={handleChange}>
+                                    <Select defaultValue="provider" onChange={handleChange}>
                                         <Option value="demandSide">Demand side</Option>
                                         <Option value="provider">Provider</Option>
                                         <Option value="both">both</Option>
                                     </Select>
-                                <Button>modify</Button>
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="phoneNumber">
+                            <div>
                                 <span>phoneNumber:</span>
-                                <Input style={{width:"120px",height:"20px"}} defaultValue="13761234905" />
-                                <Button>modify</Button>
+                                <Input defaultValue="13761234905" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="mailBox">
+                            <div>
                                 <span>mailBox:</span>
-                                <Input style={{width:"160px",height:"20px"}} defaultValue="cnyuanjia@gmail.com" />
-                                <Button>modify</Button>
+                                <Input defaultValue="cnyuanjia@gmail.com" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="address">
+                            <div>
                                 <span>address:</span>
-                                <Input style={{width:"160px",height:"20px"}} defaultValue="" />
-                                <Button>modify</Button>
+                                <Input defaultValue="" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
                             <div className="submit" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                                <Button>submit</Button>
+                                <Button className="modifyButton">submit</Button>
                             </div>
                         </div>
                     </TabPane>
                     <TabPane tab="公司资料" key="2">
                         <div className="enterpriseInformation">
-                            <div className="UserName">
+                            <div>
                                 <span>UserName:</span>
-                                <Input style={{width:"80px",height:"20px"}} defaultValue="Jack" />
-                                <Button>modify</Button>
+                                <Input defaultValue="Jack" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="enterpriseName">
+                            <div>
                                 <span>enterpriseName:</span>
                                 <span>enterpriseName</span>
                             </div>
-                            <div className="accountType">
+                            <div>
                                 <span>accountType:</span>
-                                <Select defaultValue="provider" style={{ width:"120px", marginTop:"-30px"}} onChange={handleChange}>
+                                <Select defaultValue="provider" onChange={handleChange}>
                                     <Option value="demandSide">Demand side</Option>
                                     <Option value="provider">Provider</Option>
                                     <Option value="both">both</Option>
                                 </Select>
-                                <Button>modify</Button>
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="phoneNumber">
+                            <div>
                                 <span>enterprisePhoneNumber:</span>
-                                <Input style={{width:"120px",height:"20px"}} defaultValue="888-888-888" />
-                                <Button>modify</Button>
+                                <Input defaultValue="888-888-888" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="mailBox">
+                            <div >
                                 <span>enterpriseMailBox:</span>
-                                <Input style={{width:"160px",height:"20px"}} defaultValue="cn@gmail.com" />
-                                <Button>modify</Button>
+                                <Input defaultValue="cn@gmail.com" />
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="address">
+                            <div>
                                 <span>enterpriseAddress:</span>
-                                {<Input style={{width:"160px",height:"20px"}} defaultValue="google" /*onChange={(e)=>this.setState({address:e.target.value})}*/ />}
-                                <Button>modify</Button>
+                                {<Input defaultValue="google" /*onChange={(e)=>this.setState({address:e.target.value})}*/ />}
+                                <Button className="modifyButton">modify</Button>
                             </div>
-                            <div className="code">
+                            <div>
                                 <span>组织机构代码:</span>
                                 <span>000</span>
                             </div>
@@ -111,7 +110,6 @@ export default class BTAccount extends PureComponent{
                         </div>
                     </TabPane>
                 </Tabs>
-            </div>
         )
     }
 }

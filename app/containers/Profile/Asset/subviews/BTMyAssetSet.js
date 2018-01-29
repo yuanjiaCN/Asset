@@ -1,5 +1,5 @@
 import React,{PureComponent} from 'react'
-import {Table, Upload, Icon, message} from 'antd';
+import {Popconfirm,Table, Upload, Icon, message} from 'antd';
 
 const Dragger = Upload.Dragger;
 
@@ -21,39 +21,60 @@ const props = {
 };
 
 
-const columns = [
-    { title: 'FileName', dataIndex: 'fileName', key: 'fileName' },
-    { title: 'FileSize', dataIndex: 'fileSize', key: 'fileSize' },
-    { title: 'sampleName', dataIndex: 'sampleName', key: 'sampleName' },
-    { title: 'sampleSize', dataIndex: 'sampleSize', key: 'sampleSize' },
-    { title: 'Action', dataIndex: '', key: 'x', render: () =>
-            <ul>
-                <a href="#">DownLoad </a>
-                <a href="#">Delete</a>
-            </ul>,
-    },
-    { title: 'Date', dataIndex: 'date', key: 'date' },
-];
-
-const data = [];
-for (let i = 0; i < 5; ++i) {
-    data.push({
-        key: i,
-        fileName:"pandas.zip",
-        fileSize:"123M",
-        sampleName:"samples.zip",
-        sampleSize:"3M",
-        date: '2018-01-15 23:12:00',
-    });
-}
 
 export default class BTMyAssetSet extends PureComponent{
     constructor(props){
-        super(props)
+        super(props);
+        this.columns = [
+            { title: 'FileName', dataIndex: 'fileName', key: 'fileName' },
+            { title: 'FileSize', dataIndex: 'fileSize', key: 'fileSize' },
+            { title: 'sampleName', dataIndex: 'sampleName', key: 'sampleName' },
+            { title: 'sampleSize', dataIndex: 'sampleSize', key: 'sampleSize' },
+            { title: "Download", dataIndex: '', key: 'x', render: () =>
+                    <ul>
+                        <a href="#">DownLoad </a>
+                    </ul>,
+            },
+            { title: 'Date', dataIndex: 'date', key: 'date' },
+            { title: 'Delete', dataIndex: 'delete',
+                render: (text, record) => {
+                    return (
+                        // this.state.dataSource.length > 1 ?
+                        //     (
+                        <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record.key)}>
+                            <a href="#">Delete</a>
+                        </Popconfirm>
+                        // ) : null
+                    );
+                },
+            },
+        ];
+
+        const data = [];
+        for (let i = 0; i < 7; ++i) {
+            data.push({
+                key: i,
+                fileName:"pandas.zip",
+                fileSize:"123M",
+                sampleName:"samples.zip",
+                sampleSize:"3M",
+                date: '2018-01-15 23:12:00',
+            });
+        }
+
+        this.state = {
+            data,
+            count:7
+        }
     }
 
-
+    onDelete(key){
+        const data = [...this.state.data];
+        this.setState({ data: data.filter(item => item.key !== key) });
+    }
     render(){
+        const { data } = this.state;
+        const columns = this.columns;
         return(
             <div>
                 <Dragger {...props}>
