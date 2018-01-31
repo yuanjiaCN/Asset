@@ -74,6 +74,7 @@ import React,{PureComponent} from 'react'
 import BTEditableCell from "./BTEditableCell"
 import { Table, Input, Icon, Button, Popconfirm,Menu, Dropdown, Select } from 'antd';
 const { Option, OptGroup } = Select;
+import "./styles.less"
 const menu = (
     <Menu>
         <Menu.Item key="0">
@@ -135,7 +136,7 @@ export default class BTAssetDetail extends PureComponent{
                     // this.state.dataSource.length > 1 ?
                     //     (
                             <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record.key)}>
-                                <a href="#">Delete</a>
+                                <a href="#" style={{color:"#6d6df5"}}>Delete</a>
                             </Popconfirm>
                         // ) : null
                 );

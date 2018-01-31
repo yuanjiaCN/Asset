@@ -1,6 +1,6 @@
 import React,{PureComponent} from 'react'
 import {Popconfirm,Table, Upload, Icon, message} from 'antd';
-
+import "./styles.less"
 const Dragger = Upload.Dragger;
 
 const props = {
@@ -31,9 +31,9 @@ export default class BTMyAssetSet extends PureComponent{
             { title: 'sampleName', dataIndex: 'sampleName', key: 'sampleName' },
             { title: 'sampleSize', dataIndex: 'sampleSize', key: 'sampleSize' },
             { title: "Download", dataIndex: '', key: 'x', render: () =>
-                    <ul>
-                        <a href="#">DownLoad </a>
-                    </ul>,
+                    <a>
+                        <Icon type="download" style={{color:"black",fontWeight:900}}/>
+                    </a>
             },
             { title: 'Date', dataIndex: 'date', key: 'date' },
             { title: 'Delete', dataIndex: 'delete',
@@ -42,7 +42,7 @@ export default class BTMyAssetSet extends PureComponent{
                         // this.state.dataSource.length > 1 ?
                         //     (
                         <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record.key)}>
-                            <a href="#">Delete</a>
+                            <a href="#" style={{color:"#6d6df5"}}>Delete</a>
                         </Popconfirm>
                         // ) : null
                     );
@@ -86,7 +86,6 @@ export default class BTMyAssetSet extends PureComponent{
                 </Dragger>
                     <Table
                         bordered
-                        className="components-table-demo-nested"
                         columns={columns}
                         dataSource={data}
                     />

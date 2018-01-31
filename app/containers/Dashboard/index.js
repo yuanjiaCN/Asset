@@ -1,7 +1,7 @@
 import React,{PureComponent} from 'react'
 import BTDashboardChart from './subviews/BTDashboardChart'
 import BTDashboardTable from './subviews/BTDashboardTable'
-
+import "./subviews/dashboardStyle.less"
 
 export default class BTDashboard extends PureComponent{
     constructor(props){

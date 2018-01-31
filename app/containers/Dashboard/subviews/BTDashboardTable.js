@@ -1,5 +1,6 @@
 import React,{PureComponent} from 'react'
-import { Table } from 'antd';
+import { Table } from 'antd'
+import "./dashboardStyle.less"
 
 const columns = [
     {title: 'TransactionID', dataIndex: 'id',},
