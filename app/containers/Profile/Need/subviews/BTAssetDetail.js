@@ -51,13 +51,8 @@ export default class BTAssetDetail extends PureComponent{
         const columns = this.columns;
         return(
 
-            <div style={{}}>
-                <Table
-                    className="components-table-demo-nested"
-                    columns={columns}
-                    expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
-                    dataSource={data}
-                />
+            <div>
+                <Table bordered dataSource={data} columns={columns} />
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React,{PureComponent} from 'react'
 import { Table, Icon } from 'antd'
+import "./style.less"
 
 const columns = [
     { title: 'To', dataIndex: 'to', key: 'to',},
@@ -55,6 +56,7 @@ export default class BTCheck extends PureComponent{
         return(
             <div style={{width:"90%",height:"100%"}}>
                 <Table
+                    bordered = "true"
                     columns={columns}
                     expandedRowRender={record => <p style={{ margin: 0 }}>{record.description}</p>}
                     dataSource={data}

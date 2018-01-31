@@ -16,7 +16,7 @@ const columns = [
     {title: 'Block', dataIndex: 'block',}
     ];
 const data = [];
-for (let i = 0; i < 7; ++i) {
+for (let i = 0; i < 5; ++i) {
     data.push({
         key: i,
         id: '345231',
@@ -39,7 +39,7 @@ export default class BTDashboardTable extends PureComponent{
     render(){
         return(
             <div style={{width:"100%"}}>
-                <Table columns={columns} dataSource={data} size="middle" />
+                <Table columns={columns} dataSource={data} size="middle" bordered />
             </div>
         )
     }

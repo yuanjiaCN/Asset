@@ -85,8 +85,8 @@ export default class BTMyAssetSet extends PureComponent{
                     <p className="ant-upload-hint">Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files</p>
                 </Dragger>
                     <Table
+                        bordered
                         className="components-table-demo-nested"
-
                         columns={columns}
                         dataSource={data}
                     />

@@ -26,13 +26,6 @@ export default class BTProfileAsset extends PureComponent{
                     <TabPane tab="已发布需求" key="2">
                         <BTAssetDetail/>
                     </TabPane>
-                    <TabPane tab="已购买需求" key="3">
-                        <BTHaveBought/>
-                    </TabPane>
-
-                    <TabPane tab="我的需求库" key="4">
-                        <BTMyAssetSet/>
-                    </TabPane>
                 </Tabs>
             </div>
         )

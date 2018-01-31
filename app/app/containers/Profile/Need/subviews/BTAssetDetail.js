@@ -1,5 +1,6 @@
 import React,{PureComponent} from 'react'
 import {Table} from 'antd';
+import "../styles.less"
 
 const columns = [
     { title: 'Title', dataIndex: 'title', key: 'title' },

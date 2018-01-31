@@ -36,7 +36,7 @@ export default class BTHistory extends PureComponent{
     }
     render(){
         return(
-            <div className="assetTagPage">
+            <div style={{width:"90%"}}>
                     <Table columns={columns} dataSource={data} size="middle" />
             </div>
         )

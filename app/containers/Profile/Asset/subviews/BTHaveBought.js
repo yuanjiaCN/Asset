@@ -45,6 +45,7 @@ export default class BTHaveBought extends PureComponent{
             <Table
                 columns={columns}
                 dataSource={data}
+                bordered
             />
         )
     }

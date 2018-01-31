@@ -65,7 +65,6 @@ export default class BTMyAssetSet extends PureComponent{
                 </Dragger>
                     <Table
                         className="components-table-demo-nested"
-
                         columns={columns}
                         dataSource={data}
                     />

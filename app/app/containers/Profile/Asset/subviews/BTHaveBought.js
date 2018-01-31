@@ -1,6 +1,6 @@
 import React,{PureComponent} from 'react'
 import { Table, } from 'antd';
-
+import "../styles.less"
 const data = [];
 for (let i = 0; i < 7; ++i) {
     data.push({
@@ -38,9 +38,7 @@ export default class BTHaveBought extends PureComponent{
 
     render(){
         return(
-            <Table
-                columns={columns}
-                dataSource={data}
+            <Table bordered columns={columns} dataSource={data}
             />
         )
     }

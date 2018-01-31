@@ -1,5 +1,6 @@
 import React,{PureComponent} from 'react'
 import { Table } from 'antd';
+import "./style.less"
 
 const columns = [
     { title: 'TradingID', dataIndex: 'tradingId',},
@@ -50,7 +51,7 @@ export default class BTHistory extends PureComponent{
     }
     render(){
         return(
-            <div className="assetTagPage">
+            <div  style={{width:"90%",height:"100%"}}>
                     <Table columns={columns} dataSource={data} size="middle" />
             </div>
         )

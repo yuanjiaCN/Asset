@@ -83,8 +83,8 @@ export default class BTShopCart extends PureComponent{
         };
         return (
             <div className="container column">
-                <div>
-                    <Table rowSelection={rowSelection}  columns={columns} dataSource={data}
+                <div style={{width:"90%"}}>
+                    <Table bordered rowSelection={rowSelection}  columns={columns} dataSource={data}
                     />
                 </div>
                 <div>
